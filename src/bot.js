@@ -3,7 +3,7 @@ const { Client, MessageEmbed, MessageAttachment } = require('discord.js');
 const client = new Client();
 
 const getSpellInfo = require('../api/requests.js').getSpellInfo;
-
+const color = require('../config').PRIMARY_COLOR;
 
 // prefix in messages to identify a bot command
 const PREFIX = "!";
@@ -47,7 +47,8 @@ client.on('message', async (message) => {
                         embed.setTitle(`${spell.name}    |   Spell Lvl: ${spell.level}`)
                             .setDescription(spell.desc)
                             .addField('School', spell.school.name, true)
-                            .addField('Components', `${spell.components}`, true);
+                            .addField('Components', `${spell.components}`, true)
+                            .setColor(color);
 
                         if(spell.material) embed.addField('Material', spell.material, true);
 
