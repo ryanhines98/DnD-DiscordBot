@@ -1,9 +1,9 @@
 const axios = require('axios');
 const BASE_URL = require('../config').API_URL;
 
-module.exports = function getMonster(monster) {
+exports.getSpellInfo = function (spell) {
     const data = axios
-        .get(`${BASE_URL}monsters/${monster}`)
+        .get(`${BASE_URL}spells/${spell}`)
         .then(res => res.data)
         .catch(err => console.log(err.response.data));
 
