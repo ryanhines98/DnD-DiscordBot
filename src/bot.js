@@ -25,27 +25,21 @@ client.on('message', async (message) => {
             .split(/\s+/);
 
         switch (CMD_NAME) {
-            // case 'combat':
-            //     const embed = new MessageEmbed()
-            //         .setTitle('Combat Start!')
-            //         .setColor(0xff0000)
-            //         .setImage(message.author.displayAvatarURL());
-
-            //     message.channel.send(embed);
-            //     break;
+            // displays bot commands for user
             case 'help':
                 const embed = new MessageEmbed()
                     .setTitle('Command List')
                     .setDescription(
                         'The following are commands you can request from the bot!\n\n' +
                         `The format for commands is: \n${PREFIX} (**command name**) [ ***argument*** ], ...\n\n` +
+                        'If an argument name has a space within it, instead replace spaces with a dash (-)\n\n' +
                         '----------------\n' +
                         'COMMANDS\n' +
                         '----------------'
                     )
                     .addField(
                         `${PREFIX}spell [ _spell name_ ]`,
-                        'Provides back spell information to the channel the command was issued'
+                        'Provides back spell information to the channel the command was issued. (ex: !spell magic-missile)'
                     );
 
                 message.channel.send(embed);
