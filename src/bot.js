@@ -22,6 +22,7 @@ client.on('message', async (message) => {
         const [CMD_NAME, ...args] = message.content
             .trim()
             .substring(PREFIX.length)
+            .toLowerCase()
             .split(/\s+/);
 
         switch (CMD_NAME) {
@@ -31,7 +32,7 @@ client.on('message', async (message) => {
                     .setTitle('Command List')
                     .setDescription(
                         'The following are commands you can request from the bot!\n\n' +
-                        `The format for commands is: \n${PREFIX} (**command name**) [ ***argument*** ], ...\n\n` +
+                        `The format for commands follows: \n${PREFIX} (**command name**) [ ***argument*** ], ...\n\n` +
                         'If an argument name has a space within it, instead replace spaces with a dash (-)\n\n' +
                         '----------------\n' +
                         'COMMANDS\n' +
