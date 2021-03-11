@@ -46,6 +46,16 @@ client.on('message', async (message) => {
                 message.channel.send(embed);
                 break;
 
+            case 'dm':
+                if( message.member.roles.cache.find(role => role.name === 'DM') ) { 
+                    message.reply('You are a DM!'); 
+                }
+                else { 
+                    message.reply('Deception check failed, you are no Dungeon Master'); 
+                }
+
+                break;
+
             case 'spell':
                 //check if argument is provided
                 if(args[0]) {
@@ -56,9 +66,8 @@ client.on('message', async (message) => {
                         message.channel.send('Ran out of spell slots, could not get spell :(');
                     }
                 } else {
-                    message
-                        .reply( 'Please provide a spell to look up!\n' +
-                                'Need help? Type \'!help\' for list of commands.' );
+                    message.reply( 'Please provide a spell to look up!\n' +
+                                   'Need help? Type \'!help\' for list of commands.' );
                 }
                 break;
 
