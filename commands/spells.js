@@ -1,6 +1,5 @@
 const axios = require('axios');
 const BASE_URL = require('../config').API_URL;
-const COLOR = require('../config').PRIMARY_COLOR;
 const SCHOOL_COLORS = require('../config').COLORS_SCHOOLS;
 const { MessageEmbed, MessageAttachment } = require('discord.js');
 
