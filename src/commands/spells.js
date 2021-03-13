@@ -14,9 +14,7 @@ function getSpell(spell) {
     return data;
 }
 
-// using information obtained from API
-// construct and return discord message
-// displaying spell information
+// using information obtained from API, construct and return discord message displaying spell information
 exports.createSpellMsg = async function(arg) {
     try {
         // get spell information
