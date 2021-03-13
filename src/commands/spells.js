@@ -1,6 +1,6 @@
 const axios = require('axios');
-const BASE_URL = require('../config').API_URL;
-const SCHOOL_COLORS = require('../config').COLORS_SCHOOLS;
+const BASE_URL = require('../../config').API_URL;
+const SCHOOL_COLORS = require('../../config').COLORS_SCHOOLS;
 const { MessageEmbed, MessageAttachment } = require('discord.js');
 
 
@@ -55,7 +55,7 @@ exports.createSpellMsg = async function(arg) {
         }
         
         // attaching local image to message for thumbnail
-        const attachment = new MessageAttachment(`./src/images/${spell.school.index}.png`, `${spell.school.index}.png`);
+        const attachment = new MessageAttachment(`./images/${spell.school.index}.png`, `${spell.school.index}.png`);
         embed.attachFiles(attachment)
             .setThumbnail(`attachment://${spell.school.index}.png`);
 

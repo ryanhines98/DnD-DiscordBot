@@ -2,7 +2,7 @@ require('dotenv').config();
 const { Client, MessageEmbed } = require('discord.js');
 const client = new Client();
 
-const createSpellMsg = require('../api/spells.js').createSpellMsg;
+const createSpellMsg = require('./commands/spells.js').createSpellMsg;
 
 const PREFIX = require('../config').PREFIX;
 
